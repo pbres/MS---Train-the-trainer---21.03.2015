@@ -5,9 +5,12 @@ This is example application used on Umbraco Train the Trainer course hosted by M
 You can find here basic example of ApplicationEventHandler, accessing to ContentService events, creating Custom Section and using ApiControllers
 
 Admin credentials:
+```
 u: admin
 p: admin123
-
+```
 Coach credentials:
+```
 u:coach
 p:coach123
+```
