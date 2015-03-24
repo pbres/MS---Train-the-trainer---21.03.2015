@@ -1,0 +1,6 @@
+﻿{
+javascript : [
+'~/App_Plugins/Team/backoffice/team.resource.js',
+'~/App_Plugins/Team/backoffice/TeamTree/edit.controller.js'
+]
+}

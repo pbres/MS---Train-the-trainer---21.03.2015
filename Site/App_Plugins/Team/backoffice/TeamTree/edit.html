@@ -1,0 +1,72 @@
+﻿
+<form name="teamForm"
+      ng-controller="PluginsTeamController"
+      ng-show="loaded"
+      ng-submit="">
+
+    <umb-panel ng-show="player">
+        <umb-header tabs="tabs">
+            <div class="span12">
+                <input type="text"
+                       name="name"
+                       class="umb-headline"
+                       readonly
+                       ng-model="player.name" />
+            </div>
+
+            
+        </umb-header>
+
+        <umb-tab-view>
+            <umb-tab id="tabServiceInfo" rel="ServiceInfo" class="active">
+                <umb-pane>
+                    <umb-control-group label="Photo">
+                        <img src="{{player.photo}}" style="width:300px"/>
+                    </umb-control-group>
+                    
+                    <umb-control-group label="Position">
+                        {{player.position}}
+                    </umb-control-group>
+
+                </umb-pane>
+            </umb-tab>
+        </umb-tab-view>
+    </umb-panel>
+
+    <umb-panel ng-show="players.length > 0">
+        <umb-header tabs="tabs">
+            <div class="span12">
+                <input type="text"
+                       name="name"
+                       class="umb-headline"
+                       readonly
+                       value="Squad" />
+            </div>
+
+
+        </umb-header>
+
+        <umb-tab-view>
+            <umb-tab id="squad" rel="ServiceInfo" class="active">
+                <umb-pane>
+                    <umb-control-group label="Goalkeepers">
+                        <img src="{{item.photo}}" ng-repeat="item in players | filter:{position: 'Goalkeeper'}" style="width:200px" />
+                    </umb-control-group>
+
+                    <umb-control-group label="Defenders">
+                        <img src="{{item.photo}}" ng-repeat="item in players | filter:{position: 'Defender'}" style="width:200px" />
+                    </umb-control-group>
+
+                    <umb-control-group label="Midfielders">
+                        <img src="{{item.photo}}" ng-repeat="item in players | filter:{position: 'Midfielder'}" style="width:200px" />
+                    </umb-control-group>
+
+                    <umb-control-group label="Forwards">
+                        <img src="{{item.photo}}" ng-repeat="item in players | filter:{position: 'Forward'}" style="width:200px" />
+                    </umb-control-group>
+                    
+                </umb-pane>
+            </umb-tab>
+        </umb-tab-view>
+    </umb-panel>
+</form>
